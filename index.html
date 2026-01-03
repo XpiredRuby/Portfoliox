@@ -439,7 +439,141 @@
                   height: 100%;
                   background-image: 
                     linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(59,
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AerospacePortfolio />);
+                    linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+background-size: 50px 50px;
+opacity: 0.3;
+}
 
+.stars-field {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              background-image: 
+                radial-gradient(1px 1px at 20% 30%, white, transparent),
+                radial-gradient(1px 1px at 60% 70%, white, transparent),
+                radial-gradient(1px 1px at 50% 50%, white, transparent),
+                radial-gradient(1px 1px at 80% 10%, white, transparent),
+                radial-gradient(1px 1px at 90% 60%, white, transparent),
+                radial-gradient(1px 1px at 33% 80%, white, transparent),
+                radial-gradient(1px 1px at 15% 60%, white, transparent),
+                radial-gradient(1px 1px at 70% 40%, white, transparent);
+              background-size: 200% 200%;
+              opacity: 0.5;
+              animation: twinkle 8s ease-in-out infinite;
+            }
+
+            @keyframes twinkle {
+              0%, 100% { opacity: 0.3; }
+              50% { opacity: 0.6; }
+            }
+
+            .orbit-container {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 600px;
+              height: 600px;
+              pointer-events: none;
+            }
+
+            .orbit {
+              position: absolute;
+              border: 1px solid rgba(59, 130, 246, 0.2);
+              border-radius: 50%;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+
+            .orbit-1 {
+              width: 400px;
+              height: 400px;
+              animation: rotate 30s linear infinite;
+            }
+
+            .orbit-2 {
+              width: 500px;
+              height: 500px;
+              animation: rotate 45s linear infinite reverse;
+            }
+
+            .satellite {
+              position: absolute;
+              width: 6px;
+              height: 6px;
+              background: #3b82f6;
+              border-radius: 50%;
+              box-shadow: 0 0 10px #3b82f6;
+            }
+
+            .sat-1 {
+              top: 50%;
+              left: 50%;
+              animation: orbit1 30s linear infinite;
+            }
+
+            .sat-2 {
+              top: 50%;
+              left: 50%;
+              animation: orbit2 45s linear infinite;
+            }
+
+            @keyframes rotate {
+              from { transform: translate(-50%, -50%) rotate(0deg); }
+              to { transform: translate(-50%, -50%) rotate(360deg); }
+            }
+
+            @keyframes orbit1 {
+              from {
+                transform: translate(-50%, -50%) rotate(0deg) translateX(200px) rotate(0deg);
+              }
+              to {
+                transform: translate(-50%, -50%) rotate(360deg) translateX(200px) rotate(-360deg);
+              }
+            }
+
+            @keyframes orbit2 {
+              from {
+                transform: translate(-50%, -50%) rotate(0deg) translateX(250px) rotate(0deg);
+              }
+              to {
+                transform: translate(-50%, -50%) rotate(-360deg) translateX(250px) rotate(360deg);
+              }
+            }
+
+            @keyframes spin-slow {
+              from { transform: rotate(0deg); }
+              to { transform: rotate(360deg); }
+            }
+
+            @keyframes spin-reverse {
+              from { transform: rotate(360deg); }
+              to { transform: rotate(0deg); }
+            }
+
+            .animate-spin-slow {
+              animation: spin-slow 20s linear infinite;
+            }
+
+            .animate-spin-reverse {
+              animation: spin-reverse 15s linear infinite;
+            }
+
+            .delay-150 {
+              animation-delay: 150ms;
+            }
+
+            .delay-300 {
+              animation-delay: 300ms;
+            }
+          `}</style>
+        </div>
+      );
+    }
+
+    ReactDOM.render(<AerospacePortfolio />, document.getElementById('root'));
+</script>
+
+
+    
